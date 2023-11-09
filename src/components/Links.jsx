@@ -5,7 +5,7 @@ function Links({ links, width, position, setWidth, setPosition }) {
   return (
     <>
       {links.map(({ link, path }, key) =>
-        <NavLink to={path} className={'p-[10px] uppercase text-slate-400 font-medium'} key={key}
+        <NavLink to={path} className={'p-[10px] uppercase text-slate-500 font-medium'} key={key}
           onClick={(e) => {
             setWidth(e.currentTarget.offsetWidth);
             setPosition(e.currentTarget.offsetLeft)

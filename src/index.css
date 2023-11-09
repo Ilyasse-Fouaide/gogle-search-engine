@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 a.active {
-  @apply text-slate-50
+  @apply text-slate-300
 }
