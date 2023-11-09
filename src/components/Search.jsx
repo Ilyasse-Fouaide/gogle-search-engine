@@ -7,7 +7,7 @@ function Search() {
   switch (pathname) {
     case "/search":
       return "search";
-    case "/images":
+    case "/imagesearch":
       return "images";
     default:
       return "Error...";

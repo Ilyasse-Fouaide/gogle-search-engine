@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         element: <Search />
       },
       {
-        path: 'images',
+        path: 'imagesearch',
         element: <Search />
       },
     ],
