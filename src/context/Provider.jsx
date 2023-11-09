@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SearchContext from "./SearchContext";
 import axios from 'axios';
 
-const baseUrl = 'https://google-search72.p.rapidapi.com/'
+const baseUrl = 'https://google-search72.p.rapidapi.com'
 
 const Provider = ({ children }) => {
   const [search, setSearch] = useState("Nike");
@@ -28,7 +28,7 @@ const Provider = ({ children }) => {
   }
 
   return (
-    <SearchContext.Provider value={{ search, setSearch }}>
+    <SearchContext.Provider value={{ search, setSearch, pathEndPoint, setPathEndPoint }}>
       {children}
     </SearchContext.Provider>
   )
