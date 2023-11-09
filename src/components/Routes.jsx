@@ -20,14 +20,6 @@ const router = createBrowserRouter([
         path: 'images',
         element: <Search />
       },
-      {
-        path: 'news',
-        element: <Search />
-      },
-      {
-        path: 'videos',
-        element: <Search />
-      },
     ],
   },
 ]);

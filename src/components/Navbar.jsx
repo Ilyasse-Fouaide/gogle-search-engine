@@ -5,8 +5,10 @@ import SearchContext from '../context/SearchContext'
 function Navbar() {
   const { search } = useContext(SearchContext);
   return (
-    <div>
-      <div>nav</div>
+    <div className='container mx-auto'>
+      <div className='py-[12px] px-[6px]'>
+        nav
+      </div>
       <div>
         <Outlet />
       </div>

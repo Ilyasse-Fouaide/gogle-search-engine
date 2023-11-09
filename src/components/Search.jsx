@@ -9,10 +9,6 @@ function Search() {
       return "search";
     case "/images":
       return "images";
-    case "/news":
-      return "news";
-    case "/videos":
-      return "videos";
     default:
       return "Error...";
   }
