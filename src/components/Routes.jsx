@@ -1,5 +1,5 @@
 import React from 'react'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Navbar from './Navbar';
 import Search from './Search';
 
@@ -8,6 +8,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <Navbar />,
     children: [
+      {
+        path: "/",
+        element: <Navigate to={"search"} />
+      },
       {
         path: 'search',
         element: <Search />
