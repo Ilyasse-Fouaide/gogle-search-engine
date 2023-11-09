@@ -7,6 +7,8 @@ const baseUrl = 'https://google-search72.p.rapidapi.com'
 const Provider = ({ children }) => {
   const [search, setSearch] = useState(null);
   const [pathEndPoint, setPathEndPoint] = useState('/search');
+  const [result, setResult] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const searchResult = () => {
@@ -21,7 +23,9 @@ const Provider = ({ children }) => {
         }
       })
         .then((response) => {
-          console.log(response.data)
+          console.log(response.data);
+          setLoading(false);
+          setResult(response.data.items);
         })
         .catch((error) => {
           console.log(error);
@@ -33,7 +37,7 @@ const Provider = ({ children }) => {
   }, [search, pathEndPoint])
 
   return (
-    <SearchContext.Provider value={{ search, setSearch, pathEndPoint, setPathEndPoint }}>
+    <SearchContext.Provider value={{ search, setSearch, pathEndPoint, setPathEndPoint, result, loading }}>
       {children}
     </SearchContext.Provider>
   )
