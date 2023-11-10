@@ -8,6 +8,7 @@ const Provider = ({ children }) => {
   const [search, setSearch] = useState(null);
   const [pathEndPoint, setPathEndPoint] = useState('/search');
   const [result, setResult] = useState([]);
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,8 +29,10 @@ const Provider = ({ children }) => {
           setResult(response.data.items);
         })
         .catch((error) => {
-          console.log(error);
-        })
+          setLoading(false);
+          console.log(error.response.data.message);
+          setError(error.response.data.message)
+        });
     }
     if (search) {
       searchResult();
@@ -37,7 +40,7 @@ const Provider = ({ children }) => {
   }, [search, pathEndPoint])
 
   return (
-    <SearchContext.Provider value={{ search, setSearch, pathEndPoint, setPathEndPoint, result, loading }}>
+    <SearchContext.Provider value={{ search, setSearch, pathEndPoint, setPathEndPoint, result, error, loading }}>
       {children}
     </SearchContext.Provider>
   )
